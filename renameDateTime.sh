@@ -12,9 +12,6 @@ do
     timestamp=`echo ${line} | cut -d " " -f 6`
     filename=`echo ${line} | cut -d " " -f 7`
 
-#    timestamp_from_filename=`echo ${filename} | cut -d "_" -f 1-2 -s`
-
-    #if [ -n "${timestamp_from_filename}" ]; then
     if [ `echo ${filename} | grep ^${timestamp}` ]; then
         echo "skip: ${filename}"
         continue
